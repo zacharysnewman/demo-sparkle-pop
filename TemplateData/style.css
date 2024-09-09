@@ -1,0 +1,56 @@
+/* Keep default body padding and margin */
+body { padding: 0; margin: 0; }
+
+/* Limit the unity-container to maintain a 3:4 aspect ratio */
+#unity-container {
+    position: absolute;
+    max-width: 100vw;
+    max-height: 100vh;
+    aspect-ratio: 3 / 5;
+}
+
+/* For desktop: Center the container and maintain 3:4 aspect ratio */
+#unity-container.unity-desktop {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    aspect-ratio: 3 / 5;
+}
+
+/* For mobile: Ensure the container is full screen, while maintaining the 3:4 aspect ratio */
+#unity-container.unity-mobile {
+    position: fixed;
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    aspect-ratio: 3 / 5;
+}
+
+/* Set background for the canvas */
+#unity-canvas {
+    background: #FFFFFF;
+    max-width: 100%;
+    max-height: 100%;
+    aspect-ratio: 3 / 5;
+}
+
+/* For mobile: Ensure canvas scales correctly */
+.unity-mobile #unity-canvas {
+    width: auto;
+    height: 100%;
+    aspect-ratio: 3 / 5;
+}
+#unity-loading-bar { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: none }
+#unity-logo { width: 154px; height: 130px; background: url('unity-logo-light.png') no-repeat center }
+#unity-progress-bar-empty { width: 141px; height: 18px; margin-top: 10px; margin-left: 6.5px; background: url('progress-bar-empty-light.png') no-repeat center }
+#unity-progress-bar-full { width: 0%; height: 18px; margin-top: 10px; background: url('progress-bar-full-light.png') no-repeat center }
+#unity-footer { position: relative }
+.unity-mobile #unity-footer { display: none }
+#unity-webgl-logo { float:left; width: 204px; height: 38px; background: url('webgl-logo.png') no-repeat center }
+#unity-build-title { float: right; margin-right: 10px; line-height: 38px; font-family: arial; font-size: 18px }
+#unity-warning { position: absolute; left: 50%; top: 5%; transform: translate(-50%); background: white; padding: 10px; display: none }
